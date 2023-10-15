@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "ProductivePro Blocker",
+  "version": "1.0",
+  "description": "Block websites to prevent procrastination.List of blocked website netflix,facebook,instagram,amazonprime,youtube",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "Popup.html",
+    "default_title": "ProductivePro Blocker"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["Content.js"]
+    },
+    {
+      "matches": [
+        "*://www.youtube.com/*",
+        "*://www.facebook.com/*",
+        "*://www.netflix.com/*",
+        "*://www.primevideo.com/*",
+        "*://www.instagram.com/*",
+        "*://www.amazon.com/*"
+      ],
+
+      "js": ["Content.js"]
+    }
+  ]
+}
